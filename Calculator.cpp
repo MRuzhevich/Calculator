@@ -4,20 +4,19 @@ using namespace std;
 
 int main()
 {
-    system("chcp 1251>0"); // кодировка консоли
+    
 
-    char z;
-    double a, b;
-    cout << "Введите первое число" << endl;
-    cin >> a;
+    cout << "Chose opton:" << endl;
+    cout << "1. Del -> Energy" << endl;
+    cout << "2. Energy -> Del" << endl;
+    cout << "3. Wave -> Energy" << endl;
+    cout << "4. Energy -> Wave" << endl;
+    cout << "5. Del -> Wave" << endl;
+    cout << "6. Wave -> Del" << endl;
+    
 
-    cout << "Введите знак" << endl;
-    cin >> z;
-
-    cout << "Введите второе число" << endl;
-    cin >> b;
-
-    switch (z) {
+    
+    /*switch (z) {
     case '+':
         cout << a << '+' << b << '=' << a + b << endl;
         break;
@@ -30,9 +29,9 @@ int main()
     case '/':
         cout << a << '/' << b << '=' << a / b << endl;
         break;
-    }
+    }*/
 
 
 
-    system("pause>0"); // задержка консольного окна
+    system("pause>0");
 }
