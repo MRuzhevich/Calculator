@@ -2,25 +2,36 @@
 
 using namespace std;
 
+void ShowMenu() {
+	cout << "Choose opton:" << endl;
+	cout << "1. Del -> Energy" << endl;
+	cout << "2. Energy -> Del" << endl;
+	cout << "3. Wave -> Energy" << endl;
+	cout << "4. Energy -> Wave" << endl;
+	cout << "5. Del -> Wave" << endl;
+	cout << "6. Wave -> Del" << endl;
+	cout << "Type M to show menu" << endl;
+}
+
 int main()
 {
 	int number;
 	int n = 1;
 	double Del, Energy, Wave;
 	char yn = 'y';
-	
+	char m = 'M';
+
+	ShowMenu();
+
 	do {
 
-		cout << "Choose opton:" << endl;
-		cout << "1. Del -> Energy" << endl;
-		cout << "2. Energy -> Del" << endl;
-		cout << "3. Wave -> Energy" << endl;
-		cout << "4. Energy -> Wave" << endl;
-		cout << "5. Del -> Wave" << endl;
-		cout << "6. Wave -> Del" << endl;
+		if (cin >> m) {
+			ShowMenu();
+		}
 
 		cin >> number;
-		if (typeid(number).name() == "int") {
+
+		if (typeid(number) == typeid(int&)) {
 			if (number >= 1 && number <= 6) {
 				switch (number) {
 				case 1:
@@ -63,11 +74,13 @@ int main()
 		}
 		else {
 			cout << "Enter number" << endl;
-			continue;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			break;
 		}
-	} while (yn == 'y');
+	} while (yn == 'y' && cin >> number);
 
 
 
-	system("pause>0");
+	cin.get();
 }
